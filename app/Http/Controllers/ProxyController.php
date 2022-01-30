@@ -46,7 +46,7 @@ class ProxyController extends Controller
         Http::asForm()
             ->withOptions($options)
             ->withoutVerifying()
-            ->post($authURL, $user);
+            ->post($authURL, $user->toArray());
 
         $response = Http::withOptions($options)->withoutVerifying();
 
